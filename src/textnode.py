@@ -15,6 +15,25 @@ class TextNode:
         self.text_type = text_type
         self.url = url
 
+    def format_text(self):
+        match self.text_type:
+            case TextType.NORMAL:
+                return self.text
+            case TextType.BOLD:
+                return self.text
+            case TextType.ITALIC:
+                return self.text
+            case TextType.CODE:
+                return self.text
+            case TextType.LINK:
+                return self.text
+            case TextType.IMAGE:
+                return self.text
+            case _:
+                raise ValueError(f"Invalid text type : {self.text}")
+
+
+
     def __eq__(self,other):
         if isinstance(other,TextNode):
             return (self.text == other.text and
