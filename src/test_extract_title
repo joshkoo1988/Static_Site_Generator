@@ -1,0 +1,13 @@
+import unittest
+from extract_title import extract_title
+
+def test_extract_title(self):
+        md = "# title\nregular text \n ## h2"
+        self.assertEqual(extract_title(md),"title")
+
+def test_extract_title2(self):
+    md = "#test \n# Hello"
+    self.assertEqual(extract_title(md),"Hello")
+
+if __name__ == "__main__":
+    unittest.main()
